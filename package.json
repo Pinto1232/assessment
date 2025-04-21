@@ -1,0 +1,51 @@
+{
+  "name": "technical-interview-screening",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "clean": "rm -rf dist",
+    "type-check": "tsc",
+    "build": "babel src -x .ts -d dist --ignore **/*.test.ts --ignore **/__mocks__/*",
+    "test": "vitest",
+    "start:api": "node dist/api.js",
+    "dev:api": "babel-watch -w src --extensions .ts src/api.ts | pino-pretty -cm message"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.24.6",
+    "@babel/core": "^7.24.6",
+    "@babel/plugin-transform-runtime": "^7.24.6",
+    "@babel/preset-env": "^7.24.6",
+    "@babel/preset-typescript": "^7.24.6",
+    "@types/hapi__hapi": "^20.0.13",
+    "@types/node": "^20.17.30",
+    "@typescript-eslint/eslint-plugin": "^7.11.0",
+    "@typescript-eslint/parser": "^7.11.0",
+    "babel-plugin-module-resolver": "^5.0.2",
+    "babel-watch": "^7.8.1",
+    "eslint": "^8.57.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-no-autofix": "^2.0.0",
+    "eslint-plugin-no-loops": "^0.3.0",
+    "mongodb-memory-server": "^9.2.0",
+    "npm-check-updates": "^16.14.20",
+    "pino-pretty": "^11.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3",
+    "vitest": "^1.6.0",
+    "yaml": "^2.4.2"
+  },
+  "dependencies": {
+    "@aws-sdk/client-sqs": "^3.583.0",
+    "@babel/runtime": "^7.24.6",
+    "@hapi/basic": "^7.0.2",
+    "@hapi/boom": "^10.0.1",
+    "@hapi/hapi": "^21.3.9",
+    "@types/express": "^5.0.1",
+    "@types/mongoose": "^5.11.97",
+    "express": "^5.1.0",
+    "mongoose": "^8.13.2",
+    "zod": "^3.23.8"
+  }
+}
